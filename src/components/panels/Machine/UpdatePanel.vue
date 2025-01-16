@@ -75,7 +75,8 @@ export default class UpdatePanel extends Mixins(BaseMixin) {
     mdiUpdate = mdiUpdate
 
     get enableUpdateManager() {
-        return this.$store.state.server.components.includes('update_manager')
+        //return this.$store.state.server.components.includes('update_manager')
+        return false
     }
 
     get modules() {

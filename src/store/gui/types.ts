@@ -26,9 +26,15 @@ export interface GuiState {
         feedrateXY: number
         stepsXY: number[]
         feedrateZ: number
+        feedrateA: number
+        feedrateB: number
+        feedrateC: number
         offsetsZ: number[]
         offsetZSaveOption: null | 'Z_OFFSET_APPLY_ENDSTOP' | 'Z_OFFSET_APPLY_PROBE'
         stepsZ: number[]
+        stepsA: number[]
+        stepsB: number[]
+        stepsC: number[]
         stepsAll: number[]
         stepsCircleXY: number[]
         stepsCircleZ: number[]

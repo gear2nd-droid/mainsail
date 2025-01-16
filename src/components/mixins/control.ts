@@ -105,6 +105,18 @@ export default class ControlMixin extends Vue {
         return this.homedAxes.includes('z')
     }
 
+    get aAxisHomed(): boolean {
+        return this.homedAxes.includes('a')
+    }
+
+    get bAxisHomed(): boolean {
+        return this.homedAxes.includes('b')
+    }
+
+    get cAxisHomed(): boolean {
+        return this.homedAxes.includes('c')
+    }
+
     get macros() {
         return this.$store.getters['printer/getMacros']
     }
@@ -149,6 +161,21 @@ export default class ControlMixin extends Vue {
     doHomeZ() {
         this.$store.dispatch('server/addEvent', { message: 'G28 Z', type: 'command' })
         this.$socket.emit('printer.gcode.script', { script: 'G28 Z' }, { loading: 'homeZ' })
+    }
+
+    doHomeA() {
+        this.$store.dispatch('server/addEvent', { message: 'G28 A', type: 'command' })
+        this.$socket.emit('printer.gcode.script', { script: 'G28 A' }, { loading: 'homeA' })
+    }
+
+    doHomeB() {
+        this.$store.dispatch('server/addEvent', { message: 'G28 B', type: 'command' })
+        this.$socket.emit('printer.gcode.script', { script: 'G28 B' }, { loading: 'homeB' })
+    }
+
+    doHomeC() {
+        this.$store.dispatch('server/addEvent', { message: 'G28 C', type: 'command' })
+        this.$socket.emit('printer.gcode.script', { script: 'G28 C' }, { loading: 'homeC' })
     }
 
     doQGL() {
